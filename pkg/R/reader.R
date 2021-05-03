@@ -26,6 +26,11 @@ function(DateFormat = "%d %B %Y %H:%M:%S")
                      tz = "GMT")
         mid <- gsub("Message-ID: ", "",
                     grep("^Message-ID:", header, value = TRUE, useBytes = TRUE))
+        if (!length(mid)) {
+            mid <- gsub("Message-Id: ", "",
+                        grep("^Message-Id:", header, value = TRUE, useBytes = TRUE))
+        }
+        
         origin <- gsub("Newsgroups: ", "",
                        grep("^Newsgroups:", header, value = TRUE, useBytes = TRUE))
         heading <- gsub("Subject: ", "",
