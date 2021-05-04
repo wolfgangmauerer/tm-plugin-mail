@@ -29,6 +29,10 @@ function(DateFormat = "%d %B %Y %H:%M:%S")
         if (!length(mid)) {
             mid <- gsub("Message-Id: ", "",
                         grep("^Message-Id:", header, value = TRUE, useBytes = TRUE))
+            if (!length(mid)) {
+                mid <- gsub("Message-id: ", "",
+                            grep("^Message-id:", header, value = TRUE, useBytes = TRUE))
+            }
         }
         
         origin <- gsub("Newsgroups: ", "",
