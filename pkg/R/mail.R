@@ -150,7 +150,7 @@ threads <- function(x)
                 for (i in 1:length(parentID)) {
                     info <- get.thread.id(parentID[[i]], ht)
                     if (!is.na(info$threadID))
-                        next
+                        break
                 }
             } else
                 info <- get.thread.id(parentID, ht)
