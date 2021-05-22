@@ -40,7 +40,7 @@ function(DateFormat = "%d %B %Y %H:%M:%S")
         }
         
         ## if mid is empty string, then the actual Message-ID is given in the subsequent line
-        if (identical(mid, "") {
+        if (identical(mid, "")) {
             mid <- trimws(header[[grep(mid.key, header, value = FALSE, useBytes = TRUE) + 1]])
         }    
         
