@@ -147,10 +147,10 @@ threads <- function(x)
 
             parentID <- unique(parentID)
             if (length(parentID) > 1) {
-                for (i in 1:length(parentID)) {
-                    info <- get.thread.id(parentID[[i]], ht)
+                for (j in 1:length(parentID)) {
+                    info <- get.thread.id(parentID[[j]], ht)
                     if (!is.na(info$threadID))
-                        next
+                        break
                 }
             } else
                 info <- get.thread.id(parentID, ht)
